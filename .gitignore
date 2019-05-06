@@ -3,3 +3,7 @@
 impacket/*
 *.egg-info/
 *.egg
+develop-eggs/
+__pycache__/
+build/
+dist/
