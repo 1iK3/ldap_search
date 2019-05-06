@@ -3,7 +3,7 @@
 ![](https://img.shields.io/badge/Python-2.7,%203.6+-blue.svg)&nbsp;&nbsp;
 ![](https://img.shields.io/badge/License-GPL%203.0-green.svg)
 
-LDAP_Search can be used to enumerate Users, Groups, Computers, Domain Policies, and Domain Trusts on a Windows Domain. Authentication can be performed using traditional username and password, or NTLM hash. In addition, this tool has been modified to allow brute force/password-spraying via LDAP. 
+LDAP_Search can be used to enumerate Users, Groups, Computers, Domain Policies, and Domain Trusts within a Windows environment. Authentication can be performed using traditional username and password, or NTLM hash. In addition, this tool has been modified to allow brute force/password-spraying via LDAP. 
 
 Ldap_Search is compatible with Python 2.7 / 3.6+ and makes use of the [Impacket](https://github.com/SecureAuthCorp/impacket/) library to perform the main operations.
 
@@ -15,20 +15,24 @@ sudo python3 setup.py install
 ```
 
 ## Usage
+Password spray with LDAP:
+```bash
+ldap_search -U users.txt -P 'Summer2019!' -d demo.local
+```
 
 Enumerate all active users on a domain:
 ```bash
 ldap_search users -u user1 -p Password1 -d demo.local
 ```
 
-Lookup a single user and display field headings:
+Lookup a single user and display attributes:
 ```bash
 ldap_search users -q AdminUser -u user1 -p Password1 -d demo.local
 ```
 
-Enumerate all computers on a domain:
+Enumerate all computers on a domain and resolve IP addresses:
 ```bash
-ldap_search computers -u user1 -p Password1 -d demo.local
+ldap_search computers -r -u user1 -p Password1 -d demo.local
 ```
 
 Search for end of life systems on the domain:
@@ -48,10 +52,10 @@ ldap_search domain -u user1 -p Password1 -d demo.local
 
 Write a custom query:
 ```bash
-ldap_search custom -q '(objectClass=*)' -a 'cn' -u user1 -p Password1 -d demo.local
+ldap_search custom -q '(objectClass=*)' -a 'objectName' -u user1 -p Password1 -d demo.local
 ```
 
-## Queries Types
+## Query Types
 ```
 User
   active / [None] - All active users (Default)
