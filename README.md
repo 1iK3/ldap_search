@@ -1,8 +1,11 @@
 ## LDAP_Search
 
-![](https://img.shields.io/badge/Python-2.7,%203.6+-blue.svg)&nbsp;&nbsp;
+![](https://img.shields.io/badge/Python-2.7-blue.svg)&nbsp;&nbsp;
+![](https://img.shields.io/badge/Python-3.6+-blue.svg)&nbsp;&nbsp;
 ![](https://img.shields.io/badge/License-GPL%203.0-green.svg)
+#### *UPDATE: [Ldap_search](https://github.com/m8r0wn/ldap_search) has been integrated into [ActiveReign](https://github.com/m8r0wn/ActiveReign). Please check [HERE](https://github.com/m8r0wn/ActiveReign) for the latest on the project!*
 
+## Overview
 LDAP_Search can be used to enumerate Users, Groups, Computers, Domain Policies, and Domain Trusts within a Windows environment. Authentication can be performed using traditional username and password, or NTLM hash. In addition, this tool has been modified to allow brute force/password-spraying via LDAP. 
 
 Ldap_Search is compatible with Python 2.7 / 3.6+ and makes use of the [Impacket](https://github.com/SecureAuthCorp/impacket/) library to perform the main operations.
